@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2563eb">
+  <title>Precio Fácil</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div class="logo" aria-hidden="true">🧮</div>
+      <h1>Precio <span>Fácil</span></h1>
+      <p>Calcula tus ventas de forma sencilla</p>
+    </header>
+
+    <section class="panel" aria-labelledby="producto-titulo">
+      <h2 id="producto-titulo">📦 Datos del producto</h2>
+      <label for="nombre">Nombre del producto</label>
+      <input id="nombre" type="text" placeholder="Ej. Arroz" autocomplete="off">
+
+      <div class="grid">
+        <div>
+          <label for="precio">Precio por unidad ($)</label>
+          <input id="precio" type="number" min="0" step="any" inputmode="decimal" placeholder="3500">
+        </div>
+        <div>
+          <label for="cantidad">Cantidad</label>
+          <input id="cantidad" type="number" min="1" step="1" value="1" inputmode="numeric">
+        </div>
+      </div>
+
+      <div class="total-box">
+        <span>Total a pagar</span>
+        <strong id="total">$ 0</strong>
+      </div>
+
+      <label for="recibido">Dinero recibido ($)</label>
+      <input id="recibido" type="number" min="0" step="any" inputmode="decimal" placeholder="10000">
+
+      <div class="change-box">
+        <span id="textoVueltas">Vueltas por devolver</span>
+        <strong id="vueltas">$ 0</strong>
+      </div>
+
+      <div class="buttons">
+        <button id="sumar" class="btn green" type="button">＋ Sumar</button>
+        <button id="restar" class="btn orange" type="button">－ Restar</button>
+        <button id="multiplicar" class="btn blue" type="button">× Calcular total</button>
+        <button id="borrar" class="btn red" type="button">✕ Borrar datos</button>
+      </div>
+
+      <button id="guardar" class="btn primary full" type="button">Guardar producto</button>
+      <p id="mensaje" class="message" aria-live="polite"></p>
+    </section>
+
+    <section class="panel" aria-labelledby="historial-titulo">
+      <div class="history-heading">
+        <h2 id="historial-titulo">🕘 Productos recientes</h2>
+        <span id="contador" class="counter">0 / 10</span>
+      </div>
+      <div id="historial" class="history">
+        <p class="empty">Todavía no hay productos guardados.</p>
+      </div>
+      <button id="limpiarHistorial" class="btn clear full" type="button">Limpiar historial</button>
+    </section>
+
+    <footer>Precio Fácil · Tu calculadora de ventas</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
